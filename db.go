@@ -567,6 +567,8 @@ func (db *DB) beginTx() (*Tx, error) {
 	}
 	// Return mmap error if a previous mmap failed.
 	if db.mmapErr != nil {
+		db.mmaplock.RUnlock()
+		db.metalock.Unlock()
 		return nil, db.mmapErr
 	}
 
