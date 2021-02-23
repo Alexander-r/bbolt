@@ -3,6 +3,7 @@ package bbolt
 import (
 	"bytes"
 	"fmt"
+	"sync/atomic"
 	"unsafe"
 )
 
@@ -81,7 +82,7 @@ func (b *Bucket) Writable() bool {
 // Do not use a cursor after the transaction is closed.
 func (b *Bucket) Cursor() *Cursor {
 	// Update transaction statistics.
-	b.tx.stats.CursorCount++
+	atomic.AddInt64(&b.tx.stats.CursorCount, 1)
 
 	// Allocate and return a cursor.
 	return &Cursor{

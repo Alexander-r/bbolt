@@ -582,7 +582,7 @@ type TxStats struct {
 	PageAlloc int // total bytes allocated
 
 	// Cursor statistics.
-	CursorCount int // number of cursors created
+	CursorCount int64 // number of cursors created
 
 	// Node statistics
 	NodeCount int // number of node allocations
