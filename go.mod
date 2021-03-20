@@ -1,5 +1,5 @@
-module go.etcd.io/bbolt
+module github.com/Alexander-r/bbolt
 
-go 1.12
+go 1.16
 
-require golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d
+require golang.org/x/sys v0.0.0-20210320140829-1e4c9ba3b0c4
