@@ -2,4 +2,4 @@ module github.com/Alexander-r/bbolt
 
 go 1.16
 
-require golang.org/x/sys v0.0.0-20210331175145-43e1dd70ce54
+require golang.org/x/sys v0.0.0-20210420072515-93ed5bcd2bfe
